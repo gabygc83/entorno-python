@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>🐍 Mi entorno Python</title>
 
@@ -11,7 +15,7 @@
 <style>
 
 body{
-    font-family: Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#f4f6f8;
     margin:0;
     padding:20px;
@@ -35,14 +39,13 @@ h1{
 
 textarea{
     width:100%;
-    height:260px;
-    font-family:Consolas, monospace;
+    height:250px;
+    font-family:Consolas,monospace;
     font-size:16px;
     padding:12px;
     box-sizing:border-box;
     border-radius:8px;
     border:1px solid #aaa;
-    resize:vertical;
 }
 
 button{
@@ -63,6 +66,21 @@ button{
     background:#ddd;
 }
 
+.entrada{
+    margin-top:20px;
+    background:#f1f1f1;
+    padding:15px;
+    border-radius:10px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    box-sizing:border-box;
+    font-size:16px;
+    margin-top:8px;
+}
+
 .consola{
     margin-top:20px;
     background:#111;
@@ -74,28 +92,15 @@ button{
     font-family:Consolas,monospace;
 }
 
-.entrada{
-    margin-top:20px;
-    background:white;
-    padding:15px;
-    border-radius:10px;
-}
-
-input{
-    width:100%;
-    padding:10px;
-    box-sizing:border-box;
-    margin-top:8px;
-    font-size:16px;
-}
-
 .estado{
-    margin-bottom:15px;
     font-weight:bold;
+    margin-bottom:15px;
 }
 
 </style>
+
 </head>
+
 
 <body>
 
@@ -109,37 +114,54 @@ input{
 ⏳ Cargando Python...
 </div>
 
-<label><strong>💻 Escribí tu código:</strong></label>
+
+<label>
+<strong>💻 Escribí tu código:</strong>
+</label>
 
 <textarea id="codigo">print("Hola, soy estudiante de Informática")</textarea>
+
 
 <div class="entrada">
 
 <strong>⌨️ Datos de entrada</strong>
 
 <p>
-Si tu programa utiliza <code>input()</code>, escribí aquí el dato que quieras ingresar.
+Si utilizás <code>input()</code>, escribí aquí el dato.
 </p>
 
-<input id="dato" type="text" placeholder="Escribí aquí tu respuesta">
+<input
+id="dato"
+type="text"
+placeholder="Escribí aquí tu respuesta"
+>
 
 </div>
 
-<button class="ejecutar" onclick="ejecutarCodigo()">
+
+<button
+class="ejecutar"
+onclick="ejecutarCodigo()">
+
 ▶️ Ejecutar
+
 </button>
 
-<button class="limpiar" onclick="limpiarConsola()">
-🗑️ Limpiar consola
+
+<button
+class="limpiar"
+onclick="limpiarConsola()">
+
+🗑️ Limpiar
+
 </button>
 
-<div>
 
 <h3>🖥️ Consola</h3>
 
 <div id="consola" class="consola">
+
 Esperando ejecución...
-</div>
 
 </div>
 
@@ -164,10 +186,12 @@ async function iniciarPython(){
         document.getElementById("estado").innerText =
             "✅ Python listo para ejecutar";
 
-    }catch(error){
+    }
+
+    catch(error){
 
         document.getElementById("estado").innerText =
-            "❌ No se pudo cargar Python";
+            "❌ Error al cargar Python";
 
         console.error(error);
 
@@ -178,39 +202,39 @@ async function iniciarPython(){
 iniciarPython();
 
 
-/* REEMPLAZAR INPUT */
+/* PREPARAR INPUT */
 
 function prepararCodigo(codigo){
 
-    const dato = document.getElementById("dato").value;
+    const dato =
+        document.getElementById("dato").value;
 
-    /*
-       Busca:
-       input()
-       input("mensaje")
-       input('mensaje')
-    */
 
     codigo = codigo.replace(
+
         /input\s*\(\s*(?:"([^"]*)"|'([^']*)')?\s*\)/g,
+
         function(){
 
             return JSON.stringify(dato);
 
         }
+
     );
+
 
     return codigo;
 
 }
 
 
-/* EJECUTAR */
+/* EJECUTAR PYTHON */
 
 async function ejecutarCodigo(){
 
     const consola =
         document.getElementById("consola");
+
 
     if(!pyodide){
 
@@ -221,34 +245,34 @@ async function ejecutarCodigo(){
 
     }
 
+
     let codigo =
         document.getElementById("codigo").value;
+
 
     if(codigo.trim() === ""){
 
         consola.innerText =
-            "⚠️ Escribí algún código Python.";
+            "⚠️ Escribí código Python.";
 
         return;
 
     }
 
 
-    codigo = prepararCodigo(codigo);
+    codigo =
+        prepararCodigo(codigo);
 
 
     consola.innerText =
-        "▶️ Ejecutando...\n";
+        "▶️ Ejecutando...";
 
 
     try{
 
-        /*
-        Creamos un pequeño programa
-        que captura lo que produce print()
-        */
+        const codigoSeguro =
+            JSON.stringify(codigo);
 
-        const codigoSeguro = JSON.stringify(codigo);
 
         const programa = `
 
@@ -269,24 +293,31 @@ finally:
 
     sys.stdout = _stdout_original
 
-_buffer.getvalue()
+_salida = _buffer.getvalue()
 
 `;
 
 
+        await pyodide.runPythonAsync(programa);
+
+
         const resultado =
-            await pyodide.runPythonAsync(programa);
+            pyodide.globals.get("_salida");
 
 
         consola.innerText =
-            resultado || "(El programa no mostró ningún resultado.)";
+            resultado
+            ? resultado.toString()
+            : "(Sin salida)";
 
 
-    }catch(error){
+    }
+
+    catch(error){
 
         consola.innerText =
             "❌ ERROR:\\n\\n" +
-            error;
+            String(error);
 
     }
 
@@ -305,4 +336,5 @@ function limpiarConsola(){
 </script>
 
 </body>
+
 </html>
