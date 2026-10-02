@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,7 +10,6 @@
 
 <title>Mi Entorno Python</title>
 
-
 <style>
 
 * {
@@ -17,295 +17,156 @@
 }
 
 body {
-
     margin: 0;
-
     font-family: Arial, sans-serif;
-
     background: #eef2f5;
-
 }
-
 
 .contenedor {
-
     max-width: 1000px;
-
     margin: 30px auto;
-
     background: white;
-
     border-radius: 18px;
-
     overflow: hidden;
-
     box-shadow: 0 5px 20px rgba(0,0,0,0.18);
-
 }
-
 
 .encabezado {
-
     background: #263238;
-
     color: white;
-
     padding: 25px;
-
     text-align: center;
-
 }
 
-
-.encabezado .icono {
-
+.icono {
     font-size: 45px;
-
 }
-
 
 .encabezado h1 {
-
     margin: 5px 0;
-
 }
-
 
 .encabezado p {
-
     margin: 5px;
-
 }
-
 
 .contenido {
-
     padding: 25px;
-
 }
-
-
-.titulo {
-
-    font-size: 20px;
-
-    font-weight: bold;
-
-    margin-bottom: 10px;
-
-}
-
-
-textarea {
-
-    width: 100%;
-
-    height: 300px;
-
-    resize: vertical;
-
-    background: #111;
-
-    color: #00ff66;
-
-    border: none;
-
-    border-radius: 10px;
-
-    padding: 18px;
-
-    font-family: Consolas, monospace;
-
-    font-size: 16px;
-
-    outline: none;
-
-}
-
-
-.botones {
-
-    margin-top: 15px;
-
-    display: flex;
-
-    gap: 10px;
-
-    flex-wrap: wrap;
-
-}
-
-
-button {
-
-    border: none;
-
-    border-radius: 8px;
-
-    padding: 12px 20px;
-
-    font-size: 16px;
-
-    cursor: pointer;
-
-    color: white;
-
-}
-
-
-.ejecutar {
-
-    background: #2e7d32;
-
-}
-
-
-.limpiar {
-
-    background: #607d8b;
-
-}
-
-
-.restaurar {
-
-    background: #1976d2;
-
-}
-
-
-.enviar {
-
-    background: #ef6c00;
-
-}
-
-
-button:hover {
-
-    opacity: 0.85;
-
-}
-
-
-.entrada {
-
-    display: none;
-
-    margin-top: 25px;
-
-    padding: 20px;
-
-    background: #fff3e0;
-
-    border-radius: 12px;
-
-    border: 2px solid #ffcc80;
-
-}
-
-
-.entrada-titulo {
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    margin-bottom: 10px;
-
-}
-
-
-#pregunta {
-
-    font-weight: bold;
-
-    margin-bottom: 10px;
-
-}
-
-
-#respuesta {
-
-    width: 100%;
-
-    padding: 12px;
-
-    font-size: 16px;
-
-    border: 2px solid #ccc;
-
-    border-radius: 8px;
-
-}
-
-
-.consola {
-
-    margin-top: 25px;
-
-}
-
-
-#salida {
-
-    background: #111;
-
-    color: #00ff66;
-
-    min-height: 180px;
-
-    border-radius: 10px;
-
-    padding: 18px;
-
-    font-family: Consolas, monospace;
-
-    font-size: 16px;
-
-    white-space: pre-wrap;
-
-    overflow-y: auto;
-
-}
-
-
-.estado {
-
-    margin-top: 12px;
-
-    font-size: 14px;
-
-    color: #555;
-
-}
-
-
-.pie {
-
-    background: #eceff1;
-
-    text-align: center;
-
-    padding: 12px;
-
-    color: #455a64;
-
-}
-
 
 .instrucciones {
-
     background: #e3f2fd;
-
     padding: 15px;
-
     border-radius: 10px;
-
     margin-bottom: 20px;
-
 }
 
+.titulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 300px;
+    resize: vertical;
+    background: #111;
+    color: #00ff66;
+    border: none;
+    border-radius: 10px;
+    padding: 18px;
+    font-family: Consolas, monospace;
+    font-size: 16px;
+    outline: none;
+}
+
+.botones {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+}
+
+.ejecutar {
+    background: #2e7d32;
+}
+
+.limpiar {
+    background: #607d8b;
+}
+
+.restaurar {
+    background: #1976d2;
+}
+
+.enviar {
+    background: #ef6c00;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.entrada {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    background: #fff3e0;
+    border-radius: 12px;
+    border: 2px solid #ffcc80;
+}
+
+#pregunta {
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+#respuesta {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+.consola {
+    margin-top: 25px;
+}
+
+#salida {
+    background: #111;
+    color: #00ff66;
+    min-height: 180px;
+    border-radius: 10px;
+    padding: 18px;
+    font-family: Consolas, monospace;
+    font-size: 16px;
+    white-space: pre-wrap;
+    overflow-y: auto;
+}
+
+.estado {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #555;
+}
+
+.pie {
+    background: #eceff1;
+    text-align: center;
+    padding: 12px;
+    color: #455a64;
+}
 
 </style>
 
@@ -317,8 +178,6 @@ button:hover {
 
 <div class="contenedor">
 
-
-<!-- ENCABEZADO -->
 
 <div class="encabezado">
 
@@ -334,8 +193,6 @@ button:hover {
 <div class="contenido">
 
 
-<!-- INSTRUCCIONES -->
-
 <div class="instrucciones">
 
 <strong>💡 ¿Cómo trabajar?</strong>
@@ -350,16 +207,14 @@ button:hover {
 
 <br>
 
-3️⃣ Si tu programa utiliza <strong>input()</strong>, aparecerá una caja para ingresar el dato.
+3️⃣ Si utilizás <strong>input()</strong>, aparecerá una caja para ingresar el dato.
 
 <br>
 
-4️⃣ Presioná <strong>Enviar</strong> y observá el resultado.
+4️⃣ Presioná <strong>Enviar</strong>.
 
 </div>
 
-
-<!-- EDITOR -->
 
 <div class="titulo">
 
@@ -375,8 +230,6 @@ nombre = input("¿Cómo te llamás? ")
 print("Hola", nombre)
 print("¡Bienvenido a Python!")</textarea>
 
-
-<!-- BOTONES -->
 
 <div class="botones">
 
@@ -403,25 +256,23 @@ print("¡Bienvenido a Python!")</textarea>
 </div>
 
 
-<!-- ENTRADA -->
-
 <div id="entrada" class="entrada">
 
-<div class="entrada-titulo">
+<div class="titulo">
 
 ⌨️ Entrada de datos
 
 </div>
 
 
-<div id="pregunta">
-
-Escribí tu respuesta:
-
-</div>
+<div id="pregunta"></div>
 
 
-<input id="respuesta" type="text" placeholder="Escribí aquí...">
+<input
+    id="respuesta"
+    type="text"
+    placeholder="Escribí aquí..."
+>
 
 
 <br><br>
@@ -436,16 +287,12 @@ Escribí tu respuesta:
 </div>
 
 
-<!-- ESTADO -->
-
 <div class="estado" id="estado">
 
 ⏳ Cargando Python...
 
 </div>
 
-
-<!-- CONSOLA -->
 
 <div class="consola">
 
@@ -470,7 +317,7 @@ Esperando a que Python esté listo...
 
 <div class="pie">
 
-🐍 Python • Informática • Programación
+🐍 Python para aprender programación
 
 </div>
 
@@ -481,7 +328,7 @@ Esperando a que Python esté listo...
 
 <!-- PYODIDE -->
 
-<script src="https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script>
 
 
 <script>
@@ -489,11 +336,13 @@ Esperando a que Python esté listo...
 
 let pyodide = null;
 
-let programaActual = "";
+let codigoActual = "";
 
-let entradas = [];
+let preguntas = [];
 
-let indiceEntrada = 0;
+let respuestas = [];
+
+let posicionPregunta = 0;
 
 
 const codigoInicial = `print("Hola, soy estudiante de Informática")
@@ -509,7 +358,6 @@ print("¡Bienvenido a Python!")`;
    CARGAR PYTHON
 ========================================== */
 
-
 async function cargarPython() {
 
     try {
@@ -517,10 +365,13 @@ async function cargarPython() {
         document.getElementById("estado").innerText =
             "⏳ Cargando Python...";
 
+
         pyodide = await loadPyodide();
+
 
         document.getElementById("estado").innerText =
             "🟢 Python listo para ejecutar";
+
 
         document.getElementById("salida").innerText =
             "Python está listo.\n\nPresioná ▶️ Ejecutar.";
@@ -530,10 +381,11 @@ async function cargarPython() {
     catch(error) {
 
         document.getElementById("estado").innerText =
-            "🔴 No se pudo cargar Python.";
+            "🔴 Error al cargar Python";
+
 
         document.getElementById("salida").innerText =
-            error;
+            error.toString();
 
     }
 
@@ -542,13 +394,12 @@ async function cargarPython() {
 
 
 /* ==========================================
-   BUSCAR LOS INPUT()
+   BUSCAR INPUT()
 ========================================== */
 
+function encontrarPreguntas(codigo) {
 
-function obtenerInputs(codigo) {
-
-    let encontrados = [];
+    let resultado = [];
 
     let expresion =
         /input\s*\(\s*(?:"([^"]*)"|'([^']*)')\s*\)/g;
@@ -558,28 +409,28 @@ function obtenerInputs(codigo) {
 
     while ((coincidencia = expresion.exec(codigo)) !== null) {
 
-        let pregunta =
+        let texto =
             coincidencia[1] !== undefined
             ? coincidencia[1]
             : coincidencia[2];
 
-        encontrados.push(pregunta);
+
+        resultado.push(texto);
 
     }
 
 
-    return encontrados;
+    return resultado;
 
 }
 
 
 
 /* ==========================================
-   REEMPLAZAR INPUT POR LOS DATOS
+   REEMPLAZAR INPUT()
 ========================================== */
 
-
-function prepararCodigo(codigo, valores) {
+function reemplazarInputs(codigo, valores) {
 
     let posicion = 0;
 
@@ -608,9 +459,7 @@ function prepararCodigo(codigo, valores) {
    EJECUTAR
 ========================================== */
 
-
-async function ejecutarPython() {
-
+function ejecutarPython() {
 
     if (!pyodide) {
 
@@ -623,51 +472,43 @@ async function ejecutarPython() {
     }
 
 
-    programaActual =
+    codigoActual =
         document.getElementById("codigo").value;
 
 
-    entradas =
-        obtenerInputs(programaActual);
+    preguntas =
+        encontrarPreguntas(codigoActual);
 
 
-    indiceEntrada = 0;
+    respuestas = [];
+
+    posicionPregunta = 0;
 
 
     document.getElementById("salida").innerText = "";
 
 
-    /*
+    if (preguntas.length > 0) {
 
-    Si el programa tiene input(),
-    mostramos la primera pregunta.
-
-    */
-
-
-    if (entradas.length > 0) {
-
-        mostrarEntrada();
-
-        return;
+        mostrarPregunta();
 
     }
 
+    else {
 
-    ejecutarCodigo([]);
+        ejecutarCodigo();
 
+    }
 
 }
 
 
 
 /* ==========================================
-   MOSTRAR ENTRADA
+   MOSTRAR PREGUNTA
 ========================================== */
 
-
-function mostrarEntrada() {
-
+function mostrarPregunta() {
 
     let caja =
         document.getElementById("entrada");
@@ -685,7 +526,7 @@ function mostrarEntrada() {
 
 
     pregunta.innerText =
-        entradas[indiceEntrada];
+        preguntas[posicionPregunta];
 
 
     respuesta.value = "";
@@ -701,9 +542,7 @@ function mostrarEntrada() {
    ENVIAR RESPUESTA
 ========================================== */
 
-
 function enviarRespuesta() {
-
 
     let respuesta =
         document.getElementById("respuesta").value;
@@ -718,15 +557,15 @@ function enviarRespuesta() {
     }
 
 
-    entradas[indiceEntrada] = respuesta;
+    respuestas.push(respuesta);
 
 
-    indiceEntrada++;
+    posicionPregunta++;
 
 
-    if (indiceEntrada < obtenerInputs(programaActual).length) {
+    if (posicionPregunta < preguntas.length) {
 
-        mostrarEntrada();
+        mostrarPregunta();
 
     }
 
@@ -736,7 +575,7 @@ function enviarRespuesta() {
             "none";
 
 
-        ejecutarCodigo(entradas);
+        ejecutarCodigo();
 
     }
 
@@ -745,12 +584,10 @@ function enviarRespuesta() {
 
 
 /* ==========================================
-   EJECUTAR CÓDIGO REAL
+   EJECUTAR EL CÓDIGO
 ========================================== */
 
-
-async function ejecutarCodigo(valores) {
-
+async function ejecutarCodigo() {
 
     let salida =
         document.getElementById("salida");
@@ -760,20 +597,29 @@ async function ejecutarCodigo(valores) {
 
 
     let codigoFinal =
-        prepararCodigo(programaActual, valores);
+        reemplazarInputs(
+            codigoActual,
+            respuestas
+        );
 
 
-    let resultado = "";
+    let textoSalida = "";
 
+
+    /*
+       IMPORTANTE:
+       usamos RAW para capturar la salida
+       carácter por carácter.
+    */
 
     pyodide.setStdout({
 
-        batched: function(texto) {
+        raw: function(caracter) {
 
-            resultado += texto;
+            textoSalida += caracter;
 
             salida.innerText =
-                resultado;
+                textoSalida;
 
         }
 
@@ -781,7 +627,6 @@ async function ejecutarCodigo(valores) {
 
 
     try {
-
 
         await pyodide.runPythonAsync(
             codigoFinal
@@ -792,11 +637,9 @@ async function ejecutarCodigo(valores) {
 
     catch(error) {
 
-
         salida.innerText +=
             "\n\n❌ ERROR:\n" +
-            error;
-
+            error.toString();
 
     }
 
@@ -808,13 +651,10 @@ async function ejecutarCodigo(valores) {
    LIMPIAR
 ========================================== */
 
-
 function limpiarConsola() {
-
 
     document.getElementById("salida").innerText =
         "Consola limpia.\n\nPresioná ▶️ Ejecutar.";
-
 
     document.getElementById("entrada").style.display =
         "none";
@@ -827,9 +667,7 @@ function limpiarConsola() {
    RESTAURAR
 ========================================== */
 
-
 function restaurarCodigo() {
-
 
     document.getElementById("codigo").value =
         codigoInicial;
@@ -850,7 +688,6 @@ function restaurarCodigo() {
    INICIAR
 ========================================== */
 
-
 cargarPython();
 
 
@@ -860,3 +697,4 @@ cargarPython();
 </body>
 
 </html>
+```
