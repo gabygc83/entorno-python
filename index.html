@@ -301,14 +301,16 @@ _salida = _buffer.getvalue()
         await pyodide.runPythonAsync(programa);
 
 
-        const resultado =
-            pyodide.globals.get("_salida");
+       const resultado =
+    pyodide.globals.get("_salida");
 
+const texto =
+    resultado.toJs();
 
-        consola.innerText =
-            resultado
-            ? resultado.toString()
-            : "(Sin salida)";
+consola.innerText =
+    texto || "(Sin salida)";
+
+resultado.destroy();
 
 
     }
